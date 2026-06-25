@@ -532,3 +532,23 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* ... tes lignes 8, 9, 10 actuelles ... */
+.menu { display: flex; gap: 20px; list-style: none; }
+.menu a { text-decoration: none; color: #222; }
+.btn, .play-btn { background: #ff6a00; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; }
+
+/* Bloc téléphone inséré ici */
+@media (max-width: 768px) {
+    .nav, .menu {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+}
+
+/* La suite de ton code actuel (Ligne 12) */
+:root {
+    --primary: #ff5500;
+    /* ... le reste ... */
+}
+
