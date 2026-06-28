@@ -111,8 +111,14 @@ nav {
     transition: color 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover {
     color: var(--primary);
+}
+
+.nav-links a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
 }
 
 .menu-toggle {
@@ -760,3 +766,5 @@ body {
 }
 .btn-orange{
     front-size: 0.85rem;}
+
+
