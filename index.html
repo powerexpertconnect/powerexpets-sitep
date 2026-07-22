@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerExperts Connect - Trouvez le bon artisan en quelques clics</title>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '599701773181100');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=599701773181100&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+    <!-- --- HEADER / NAVIGATION --- -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo">
+                    <div>
+                        <h2>PowerExperts <span>Connect</span></h2>
+                    </div>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Accueil</a></li>
+                    <li><a href="realisation/index.html">Nos réalisations</a></li>
+                </ul>
+                <a href="https://play.google.com/store/apps/details?id=com.powerexperts.connect" target="_blank" onclick="fbq('track', 'Purchase',{value: 0.00, currency: 'XOF'});" rel="noopener noreferrer" class="btn-orange header-btn"><i class="fa-brands fa-google-play"></i> TÉLÉCHARGER L'APPLICATION</a>
+                <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- --- HERO SECTION --- -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Trouvez le bon artisan pour tous vos travaux <span>en quelques clics !</span></h1>
+                <p>Électricien, plombier, climatisation, peinture, menuiserie, informatique et bien plus encore. Trouvez rapidement des professionnels qualifiés près de chez vous.</p>
+                
+                <div class="hero-features">
+                    <div class="h-feat"><i class="fa-solid fa-user-check"></i> <span><strong>Artisans vérifiés</strong><br>Des professionnels de confiance</span></div>
+                    <div class="h-feat"><i class="fa-solid fa-bolt"></i> <span><strong>Intervention rapide</strong><br>Trouvez en quelques minutes</span></div>
+                    <div class="h-feat"><i class="fa-solid fa-lock"></i> <span><strong>Service sécurisé</strong><br>Réservation en toute sécurité</span></div>
+                </div>
+
+                <a href="https://play.google.com/store/apps/details?id=com.powerexperts.connect" target="_blank" onclick="fbq('track', 'Purchase',{value: 0.00, currency: 'XOF'});" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Disponible sur Google Play" class="badge-google">
+                </a>
+            </div>
+
+            <div class="hero-images">
+                <div class="image-stack-left">
+                    <div class="img-wrapper h-img-1">
+                        <img src="images/technicien-clim.png" alt="Climatisation">
+                    </div>
+                    <div class="img-wrapper h-img-2">
+                        <img src="images/technicien-plomb.jpg" alt="Électricité">
+                    </div>
+                </div>
+                <div class="phone-mockup">
+                    <img src="images/intclient.png" alt="Application Mockup" style="width: 100%; border-radius: 24px; border: 4px solid #333;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- PROBLEMS SECTION --- -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">Des <span>problèmes</span> à la maison ?</h2>
+            <p class="section-subtitle">Ne perdez plus de temps à chercher des numéros au hasard !</p>
+            
+            <div class="problems-grid">
+                <div class="prob-card">
+                    <div class="prob-info">
+                        <i class="fa-solid fa-snowflake"></i>
+                        <h3>Climatiseur en panne ?</h3>
+                        <p>Trouvez un technicien certifié en quelques minutes.</p>
+                    </div>
+                    <img src="images/technicien-clim.jpg" alt="Panne Clim" class="prob-img">
+                </div>
+                <div class="prob-card">
+                    <div class="prob-info">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h3>Problème électrique ?</h3>
+                        <p>Électriciens qualifiés disponibles autour de vous.</p>
+                    </div>
+                    <img src="images/electricien.png" alt="Panne Électricité" class="prob-img">
+                </div>
+                <div class="prob-card">
+                    <div class="prob-info">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                        <h3>Fuite d'eau ou plomberie ?</h3>
+                        <p>Plombiers expérimentés prêts à intervenir rapidement.</p>
+                    </div>
+                    <img src="images/plombier.jpg" alt="Fuite Plomberie" class="prob-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- WHY CHOOSE & CATEGORIES SECTION --- -->
+    <section class="why-and-cats">
+        <div class="container main-flex-container">
+            
+            <div class="why-section">
+                <h2 class="section-title">Pourquoi choisir <span>PowerExperts Connect</span> ?</h2>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h4>Intervention rapide</h4>
+                        <p>Trouvez un artisan en quelques minutes seulement.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fa-solid fa-user-check"></i>
+                        <h4>Professionnels vérifiés</h4>
+                        <p>Des artisans qualifiés et de totale confiance.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fa-solid fa-clock"></i>
+                        <h4>Gain de temps</h4>
+                        <p>Réservez facilement sans appels incessants.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fa-solid fa-border-all"></i>
+                        <h4>Plusieurs catégories</h4>
+                        <p>Tous les corps de métier sont disponibles.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <h4>Satisfaction garantie</h4>
+                        <p>Un service de qualité à chaque intervention.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <h4>Gratuit</h4>
+                        <p>Téléchargement et utilisation 100% gratuits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cats-section">
+                <h3 style="color: var(--dark-blue); margin-bottom: 15px;">Catégories populaires</h3>
+                <ul class="cat-list">
+                    <li class="cat-item"><i class="fa-solid fa-plug"></i> Électricien</li>
+                    <li class="cat-item"><i class="fa-solid fa-hammer"></i> Menuiserie</li>
+                    <li class="cat-item"><i class="fa-solid fa-faucet"></i> Plombier</li>
+                    <li class="cat-item"><i class="fa-solid fa-laptop"></i> Informatique</li>
+                    <li class="cat-item"><i class="fa-solid fa-temperature-arrow-down"></i> Climatisation</li>
+                    <li class="cat-item"><i class="fa-solid fa-fire"></i> Soudure</li>
+                    <li class="cat-item"><i class="fa-solid fa-brush"></i> Peinture & Bât.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- --- CTA BANNER --- -->
+    <section class="cta-banner">
+        <div class="container cta-flex">
+            <div class="cta-left">
+                <img src="images/elect.png" alt="Artisan" class="worker-img" style="border-radius: 50%;">
+                <div class="cta-text">
+                    <h2>Prêt à trouver le bon artisan ?</h2>
+                    <p>Téléchargez PowerExperts Connect maintenant et simplifiez vos travaux au quotidien.</p>
+                </div>
+            </div>
+            <div class="cta-right">
+                <a href="https://play.google.com/store/apps/details?id=com.powerexperts.connect" target="_blank" onclick="fbq('track', 'Purchase',{value: 0.00, currency: 'XOF'});" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Disponible sur Google Play" class="badge-google">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER --- -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4 style="color: var(--white); font-weight: 700;">POWEREXPERTS-CONNECT</h4>
+                <p style="margin-top: 15px; font-size: 0.85rem;">PowerExperts Connect est votre plateforme de mise en relation avec des artisans qualifiés pour tous vos travaux et dépannages.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <!-- Liens rapides masqués -->
+            </div>
+            <div class="footer-col">
+                <h3>Catégories</h3>
+                <ul>
+                    <li><a href="#">Plombier</a></li>
+                    <li><a href="#">Électricien</a></li>
+                    <li><a href="#">Climatisation</a></li>
+                    <li><a href="#">Peinture & Bâtiment</a></li>
+                    <li><a href="#">Voir plus</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contactez-nous</h3>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-phone"></i> +226 77 05 30 20</li>
+                    <li><i class="fa-solid fa-envelope"></i> powerexpertsconnect@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Ouagadougou, Burkina Faso</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PowerExperts Connect. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
