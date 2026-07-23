@@ -401,3 +401,10 @@ body {
         justify-content: center;
     }
 }
+@media (max-width: 768px) {
+    /* Taille réduite du titre sur mobile */
+    .logo h2 {
+        font-size: 0.75rem !important;
+    }
+}
+
