@@ -9,6 +9,12 @@
     --white: #FFFFFF;
 }
 
+/* Sécurité anti-débordement horizontal sur tout le site */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +26,6 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--white);
-    overflow-x: hidden;
 }
 
 .container {
@@ -140,7 +145,7 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* Réglé à 20px */
     color: var(--dark-blue);
     line-height: 1.2;
     margin-bottom: 20px;
@@ -461,7 +466,7 @@ footer {
 }
 
 /* ==========================================
-   OPTIMISATION RESPONSIVE (TABLETTE & ANDROID)
+   OPTIMISATION RESPONSIVE (TABLETTE & MOBILE)
    ========================================== */
 
 /* TABLETTES (Moins de 992px) */
@@ -502,27 +507,26 @@ footer {
 @media (max-width: 768px) {
     nav {
         padding: 10px 0;
-        gap: 10px;
+        gap: 8px;
     }
 
     .logo img {
-        height: 38px;
+        height: 32px;
     }
 
-    .logo h2 {
-        font-size: 1rem;
-        line-height: 1.1;
+    .logo {
+        font-size: 0.95rem;
     }
 
     .nav-links {
-        display: none; /* Géré par le menu burger en JS */
+        display: none;
     }
 
     .menu-toggle {
         display: block;
     }
 
-    /* Bouton d'en-tête compact pour écran mobile */
+    /* Bouton d'en-tête compact */
     .header-btn {
         padding: 6px 10px;
         font-size: 0.7rem;
@@ -530,11 +534,11 @@ footer {
     }
 
     .hero {
-        padding: 35px 0;
+        padding: 30px 0;
     }
 
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     .hero-content p {
@@ -552,15 +556,38 @@ footer {
         justify-content: flex-start;
     }
 
-    /* Ajustement de l'image centrale */
+    /* --- AFFICHAGE DES 3 IMAGES SUR MOBILE --- */
+    .hero-images {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
     .image-stack-left {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
-    .phone-mockup {
-        width: 170px;
+    .h-img-1 { 
+        width: 100px; 
+        height: 75px; 
+    }
+    
+    .h-img-2 { 
+        width: 100px; 
+        height: 90px; 
     }
 
+    .phone-mockup { 
+        width: 120px; 
+        height: auto; 
+    }
+
+    /* Grilles adaptées pour mobile */
     .problems-grid,
     .why-grid,
     .footer-grid {
