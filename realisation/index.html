@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PowerExperts Connect - Nos réalisations</title>
+    <!-- CSS de la page réalisations -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -26,20 +31,39 @@
 </head>
 <body>
 
+    <!-- Voile sombre d'arrière-plan pour le menu mobile -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- HEADER / NAVIGATION -->
     <header class="navbar">
-        <div class="logo">
-            <a href="../index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                <img src="../images/logo.png" alt="Logo" style="height: 40px; width: auto;">
-                <span class="logo-power">PowerExperts</span><span class="logo-connect">Connect</span>
-            </a>
-        </div>
-        <nav class="nav-links">
-            <a href="../index.html">Accueil</a>
-            <a href="#" class="active">Nos réalisations</a>
-            <a href="https://play.google.com/store/apps/details?id=com.powerexperts.connect" target="_blank" onclick="fbq('track', 'Purchase', {value:0.00, currency: 'XOF'});" rel="noopener noreferrer" class="btn-download">
+        <div class="container nav-container" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <!-- Bouton Burger à gauche -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Logo au centre -->
+            <div class="logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                    <img src="../images/logo.png" alt="Logo">
+                    <h2>PowerExperts <span class="text-orange">Connect</span></h2>
+                </a>
+            </div>
+
+            <!-- Menu coulissant (Accueil & Réalisations) -->
+            <ul class="nav-links" id="nav-links">
+                <li class="close-menu" id="close-menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="#" class="active">Nos réalisations</a></li>
+            </ul>
+
+            <!-- Bouton Télécharger à droite -->
+            <a href="https://play.google.com/store/apps/details?id=com.powerexperts.connect" target="_blank" onclick="fbq('track', 'Purchase', {value:0.00, currency: 'XOF'});" rel="noopener noreferrer" class="btn-download header-btn">
                 <i class="fa-brands fa-google-play"></i> TÉLÉCHARGER
             </a>
-        </nav>
+        </div>
     </header>
 
     <!-- Conteneur GAUCHE (Audit) -->
@@ -111,11 +135,12 @@
         </a>
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
                 <div class="logo footer-logo">
-                    <span class="logo-power-white">PowerExperts</span> <span class="logo-connect">Connect</span>
+                    <h2>PowerExperts <span class="text-orange">Connect</span></h2>
                 </div>
                 <p class="footer-text">
                     La plateforme de référence mettant en relation des artisans qualifiés et passionnés avec des clients exigeants pour tous travaux de second œuvre et dépannages.
@@ -152,6 +177,8 @@
         </div>
     </footer>
 
+    <!-- Script JS placé en fin de page -->
     <script src="script.js"></script>
 </body>
-</html>
+                                                                                 </html>
+    
