@@ -528,11 +528,12 @@ footer {
     }
 
     /* Bouton d'en-tête compact */
-    .header-btn {
-        padding: 6px 10px;
-        font-size: 0.7rem;
-        white-space: nowrap;
-    }
+.header-btn {
+    padding: 5px 8px;
+    font-size: 0.65rem;
+    white-space: nowrap;
+}
+    
 
     .hero {
         padding: 30px 0;
