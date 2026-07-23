@@ -29,6 +29,9 @@
 </head>
 <body>
 
+    <!-- Voile sombre d'arrière-plan quand le menu glisse (Placé avant le header) -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
     <!-- --- HEADER / NAVIGATION --- -->
     <header>
         <div class="container">
@@ -38,12 +41,10 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
 
-                <!-- Logo au centre -->
+                <!-- Logo au centre (sans le div interne superflus) -->
                 <div class="logo">
                     <img src="images/logo.png" alt="Logo">
-                    <div>
-                        <h2>PowerExperts <span>Connect</span></h2>
-                    </div>
+                    <h2>PowerExperts <span>Connect</span></h2>
                 </div>
 
                 <!-- Liens du menu (Volet coulissant depuis la gauche) -->
@@ -62,9 +63,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- Voile sombre d'arrière-plan quand le menu glisse -->
-    <div class="menu-overlay" id="menu-overlay"></div>
 
     <!-- --- HERO SECTION --- -->
     <section class="hero">
@@ -250,28 +248,30 @@
 
     <!-- Script JavaScript pour l'ouverture/fermeture du menu latéral -->
     <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenu = document.getElementById('close-menu');
-        const navLinks = document.getElementById('nav-links');
-        const menuOverlay = document.getElementById('menu-overlay');
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const navLinks = document.getElementById('nav-links');
+            const menuOverlay = document.getElementById('menu-overlay');
 
-        if (mobileMenu && closeMenu && navLinks && menuOverlay) {
-            // Ouvrir le menu latéral
-            mobileMenu.addEventListener('click', () => {
-                navLinks.classList.add('active');
-                menuOverlay.classList.add('active');
-            });
+            if (mobileMenu && closeMenu && navLinks && menuOverlay) {
+                // Ouvrir le menu latéral
+                mobileMenu.addEventListener('click', () => {
+                    navLinks.classList.add('active');
+                    menuOverlay.classList.add('active');
+                });
 
-            // Fermer le menu latéral
-            const hideMenu = () => {
-                navLinks.classList.remove('active');
-                menuOverlay.classList.remove('active');
-            };
+                // Fermer le menu latéral
+                const hideMenu = () => {
+                    navLinks.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                };
 
-            closeMenu.addEventListener('click', hideMenu);
-            menuOverlay.addEventListener('click', hideMenu);
-        }
+                closeMenu.addEventListener('click', hideMenu);
+                menuOverlay.addEventListener('click', hideMenu);
+            }
+        });
     </script>
 </body>
-                        </html>
-                        
+    </html>
+                    
