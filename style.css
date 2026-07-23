@@ -511,11 +511,12 @@ footer {
     }
 
     .logo img {
-        height: 32px;
+        height: 26px;
     }
 
     .logo {
-        font-size: 0.95rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
     }
 
     .nav-links {
