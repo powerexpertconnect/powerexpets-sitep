@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.getElementById('nav-links');
 
     if (mobileMenu && closeMenu && navLinks) {
-        // Ouvrir le menu au clic sur les 3 barres
+        // Clic sur les 3 barres pour OUVRIR
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.add('active');
         });
 
-        // Fermer le menu au clic sur la croix (X)
+        // Clic sur la croix (X) pour FERMER
         closeMenu.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
