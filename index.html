@@ -9,10 +9,6 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-        <!-- Appel de votre fichier JavaScript externe -->
-    <script src="script.js"></script>
-</body>
-</html>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -34,7 +30,7 @@
 </head>
 <body>
 
-    <!-- Voile sombre d'arrière-plan quand le menu glisse (Placé avant le header) -->
+    <!-- Voile sombre d'arrière-plan quand le menu glisse -->
     <div class="menu-overlay" id="menu-overlay"></div>
 
     <!-- --- HEADER / NAVIGATION --- -->
@@ -46,7 +42,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
 
-                <!-- Logo au centre (sans le div interne superflus) -->
+                <!-- Logo au centre -->
                 <div class="logo">
                     <img src="images/logo.png" alt="Logo">
                     <h2>PowerExperts <span>Connect</span></h2>
@@ -251,32 +247,8 @@
         </div>
     </footer>
 
-    <!-- Script JavaScript pour l'ouverture/fermeture du menu latéral -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeMenu = document.getElementById('close-menu');
-            const navLinks = document.getElementById('nav-links');
-            const menuOverlay = document.getElementById('menu-overlay');
-
-            if (mobileMenu && closeMenu && navLinks && menuOverlay) {
-                // Ouvrir le menu latéral
-                mobileMenu.addEventListener('click', () => {
-                    navLinks.classList.add('active');
-                    menuOverlay.classList.add('active');
-                });
-
-                // Fermer le menu latéral
-                const hideMenu = () => {
-                    navLinks.classList.remove('active');
-                    menuOverlay.classList.remove('active');
-                };
-
-                closeMenu.addEventListener('click', hideMenu);
-                menuOverlay.addEventListener('click', hideMenu);
-            }
-        });
-    </script>
+    <!-- Script JavaScript pour le menu mobile -->
+    <script src="script.js"></script>
 </body>
-    </html>
-                    
+        </html>
+        
