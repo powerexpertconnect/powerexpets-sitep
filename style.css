@@ -122,11 +122,28 @@ nav {
     padding-bottom: 5px;
 }
 
+/* Bouton de fermeture du menu (Masqué par défaut sur PC) */
+.close-menu {
+    display: none;
+}
+
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--dark-blue);
+}
+
+/* Voile d'arrière-plan (Masqué par défaut) */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
 }
 
 /* --- HERO SECTION --- */
@@ -145,7 +162,7 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 1.25rem; /* Réglé à 20px */
+    font-size: 1.25rem;
     color: var(--dark-blue);
     line-height: 1.2;
     margin-bottom: 20px;
@@ -519,21 +536,54 @@ footer {
         white-space: nowrap;
     }
 
-    .nav-links {
-        display: none;
-    }
-
     .menu-toggle {
         display: block;
     }
 
+    /* --- PANNEAU COULISSANT DU MENU (DEPUIS LA GAUCHE) --- */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -280px; /* Masqué hors écran sur la gauche */
+        width: 250px;
+        height: 100vh;
+        background-color: var(--white);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+        padding: 60px 20px 20px 25px;
+        gap: 20px;
+        z-index: 2000;
+        transition: left 0.3s ease-in-out;
+    }
+
+    /* Classe activée en JS lors du clic sur le burger */
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Croix de fermeture du menu mobile */
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark-blue);
+    }
+
+    /* Voile sombre d'arrière-plan */
+    .menu-overlay.active {
+        display: block;
+    }
+
     /* Bouton d'en-tête compact */
-.header-btn {
-    padding: 5px 8px;
-    font-size: 0.65rem;
-    white-space: nowrap;
-}
-    
+    .header-btn {
+        padding: 5px 8px;
+        font-size: 0.65rem;
+        white-space: nowrap;
+    }
 
     .hero {
         padding: 30px 0;
@@ -558,7 +608,7 @@ footer {
         justify-content: flex-start;
     }
 
-    /* --- AFFICHAGE DES 3 IMAGES SUR MOBILE --- */
+    /* AFFICHAGE DES 3 IMAGES SUR MOBILE */
     .hero-images {
         display: flex;
         gap: 10px;
@@ -609,4 +659,5 @@ footer {
     .cat-list {
         grid-template-columns: 1fr;
     }
-}
+    }
+    
