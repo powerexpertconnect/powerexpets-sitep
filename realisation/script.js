@@ -1,27 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Animation d'apparition des cartes au défilement
-    const cards = document.querySelectorAll('.card');
-    
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const navLinks = document.getElementById('nav-links');
+    const menuOverlay = document.getElementById('menu-overlay');
 
-    const cardObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-                observer.unobserve(entry.target);
-            }
+    if (mobileMenu && closeMenu && navLinks && menuOverlay) {
+        // Ouvrir le menu
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.add('active');
+            menuOverlay.classList.add('active');
         });
-    }, observerOptions);
 
-    // Initialisation des styles pour l'animation
-    cards.forEach(card => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        card.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        cardObserver.observe(card);
-    });
+        // Fermer le menu
+        const hideMenu = () => {
+            navLinks.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        };
+
+        closeMenu.addEventListener('click', hideMenu);
+        menuOverlay.addEventListener('click', hideMenu);
+    }
 });
