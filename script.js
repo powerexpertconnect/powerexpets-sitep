@@ -1,27 +1,35 @@
-// Gestion du menu mobile simplifiée
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeMenu = document.querySelector('.close-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const menuOverlay = document.querySelector('.menu-overlay');
 
-menuToggle.addEventListener('click', () => {
-    if(navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-    } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '70px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.backgroundColor = '#FFFFFF';
-        navLinks.style.padding = '20px';
-        navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.05)';
+    // Fonction pour ouvrir/fermer le menu coulissant
+    function toggleMenu() {
+        if (navLinks) navLinks.classList.toggle('active');
+        if (menuOverlay) menuOverlay.classList.toggle('active');
     }
-});
 
-// Animation / Event Tracking simulator
-const ctaButtons = document.querySelectorAll('.badge-google, .header-btn');
-ctaButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        console.log('Redirection vers Google Play Store initiée.');
+    // Écouteur sur le bouton Burger (3 barres)
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+    
+    // Écouteur sur la croix (X) pour fermer
+    if (closeMenu) {
+        closeMenu.addEventListener('click', toggleMenu);
+    }
+    
+    // Écouteur sur le voile gris en arrière-plan pour fermer
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', toggleMenu);
+    }
+
+    // Animation / Event Tracking simulator (conservé de votre ancien code)
+    const ctaButtons = document.querySelectorAll('.badge-google, .header-btn');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            console.log('Redirection vers Google Play Store initiée.');
+        });
     });
 });
