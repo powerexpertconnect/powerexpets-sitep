@@ -363,50 +363,58 @@ body {
 }
 
 /* --- Adaptations Mobiles --- */
-/* --- Adaptations Mobiles Mises à Jour --- */
+/* --- Ajustements Fins Mobile --- */
 @media (max-width: 768px) {
     .navbar {
-        padding: 8px 10px;
+        padding: 8px 12px !important;
     }
 
     .menu-toggle {
         display: block;
-        font-size: 1.1rem; /* Légèrement réduit pour être proportionnel */
+        font-size: 1.05rem !important;
     }
 
-    /* 1. Taille du logo et du texte PowerExperts Connect */
+    /* 1. Logo + Titre réduit */
     .logo img {
-        height: 22px !important;
+        height: 20px !important;
     }
 
     .logo h2 {
-        font-size: 0.8rem !important; /* Réduction du titre */
+        font-size: 0.75rem !important; /* Texte PowerExperts Connect affiné */
     }
 
-    /* 2. Réduction du bouton Télécharger */
+    /* 2. Bouton Télécharger réduit */
     .btn-download {
-        font-size: 0.58rem !important; /* Écriture plus petite */
-        padding: 4px 7px !important;    /* Bouton plus compact */
-        border-radius: 4px;
+        font-size: 0.55rem !important; /* Écriture du bouton réduite */
+        padding: 4px 8px !important;    /* Rembourrage réduit */
+        border-radius: 4px !important;
     }
 
     .btn-download i {
-        font-size: 0.7rem; /* Icône Play ajustée */
+        font-size: 0.65rem !important;
     }
 
-    /* 3. Réduction du bouton WhatsApp et de son texte interne */
+    /* 3. Bouton WhatsApp compact et texte interne réduit */
     .whatsapp-audit-btn {
-        padding: 8px 16px !important;  /* Bouton moins haut */
-        font-size: 12px !important;     /* Écriture interne réduite */
+        padding: 6px 14px !important;   /* Hauteur et largeur réduites */
+        font-size: 11px !important;     /* Écriture interne plus petite */
+        max-width: 95% !important;
     }
 
     .whatsapp-icon {
-        width: 18px !important;         /* Icône WhatsApp réduite */
-        height: 18px !important;
+        width: 15px !important;         /* Icône WhatsApp ajustée */
+        height: 15px !important;
         margin-right: 6px !important;
     }
 
-    /* Le menu glissant latéral */
+    /* Conteneurs WhatsApp sur mobile */
+    .wa-container-left, 
+    .wa-container-center {
+        padding: 10px 0 !important;
+        justify-content: center !important;
+    }
+
+    /* Menu latéral */
     .nav-links {
         position: fixed;
         top: 0;
@@ -448,8 +456,7 @@ body {
         color: var(--text-dark);
     }
 
-    .hero-section h1 { font-size: 24px; }
-    .footer-container { grid-template-columns: 1fr; gap: 30px; }
-    .wa-container-left { justify-content: center; }
+    .hero-section h1 { font-size: 22px; }
 }
+
 
