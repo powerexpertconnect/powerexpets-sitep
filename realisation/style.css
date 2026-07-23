@@ -28,12 +28,28 @@ body {
     min-height: 100vh;
 }
 
+/* --- Voile sombre arrière-plan --- */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
 /* --- Barre de navigation --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 8%;
+    padding: 15px 5%;
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -41,18 +57,26 @@ body {
     z-index: 1000;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
+.menu-toggle {
+    display: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--primary-color);
 }
 
-.logo-power { color: var(--primary-color); }
-.logo-power-white { color: #ffffff; }
-.logo-connect { color: var(--orange-color); }
+.logo h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.text-orange { color: var(--orange-color); }
 
 .nav-links {
     display: flex;
     align-items: center;
+    list-style: none;
 }
 
 .nav-links a {
@@ -63,11 +87,14 @@ body {
     transition: color 0.3s;
 }
 
-/* Soulignement conservé UNIQUEMENT sur le menu actif */
 .nav-links a.active {
     color: var(--orange-color);
     border-bottom: 2px solid var(--orange-color);
     padding-bottom: 5px;
+}
+
+.close-menu {
+    display: none;
 }
 
 /* --- Bouton Téléchargement --- */
@@ -84,6 +111,7 @@ body {
     font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
+    white-space: nowrap;
     transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -110,11 +138,6 @@ body {
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 15px;
-}
-
-/* Texte en orange simple (sans la barre en dessous) */
-.text-orange {
-    color: var(--orange-color);
 }
 
 .hero-section p {
@@ -173,7 +196,6 @@ body {
     flex-grow: 1;
 }
 
-/* Badges Métiers */
 .badge {
     align-self: flex-start;
     font-size: 11px;
@@ -184,13 +206,6 @@ body {
 }
 
 .badge-electricite { background-color: #ffe6cc; color: #d35400; }
-.badge-plomberie { background-color: #e1f5fe; color: #0288d1; }
-.badge-climatisation { background-color: #e0f7fa; color: #00838f; }
-.badge-peinture { background-color: #e8f5e9; color: #2e7d32; }
-.badge-menuiserie { background-color: #efebe9; color: #4e342e; }
-.badge-carrelage { background-color: #f3e5f5; color: #6a1b9a; }
-.badge-informatique { background-color: #e8eaf6; color: #283593; }
-.badge-serrurerie { background-color: #eceff1; color: #37474f; }
 
 .card-content h3 {
     font-size: 16px;
@@ -242,7 +257,6 @@ body {
 .whatsapp-audit-btn:hover {
     background-color: #20ba5a;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
 }
 
 .whatsapp-icon {
@@ -269,7 +283,7 @@ body {
     padding: 25px 0;
 }
 
-/* --- Pied de page (Footer) --- */
+/* --- Footer --- */
 .footer {
     background-color: var(--footer-bg);
     color: #ffffff;
@@ -290,10 +304,7 @@ body {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
-    position: relative;
 }
-
-/* Trait orange sous les titres du footer supprimé */
 
 .footer-text {
     color: #aaaaaa;
@@ -319,40 +330,11 @@ body {
     align-items: center;
     border-radius: 50%;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-.footer-socials a:hover {
-    background-color: var(--orange-color);
-    color: #ffffff;
-}
-
-.footer-links, .footer-contact {
-    list-style: none;
-}
-
-.footer-links li, .footer-contact li {
-    margin-bottom: 12px;
-    font-size: 14px;
-    color: #aaaaaa;
-}
-
-.footer-links li a {
-    color: #aaaaaa;
-    text-decoration: none;
-    transition: color 0.3s, padding-left 0.3s;
-}
-
-.footer-links li a:hover {
-    color: var(--orange-color);
-    padding-left: 5px;
-}
-
-.footer-contact li i {
-    margin-right: 10px;
-    color: var(--orange-color);
-    width: 16px;
-}
+.footer-links, .footer-contact { list-style: none; }
+.footer-links li, .footer-contact li { margin-bottom: 12px; font-size: 14px; color: #aaaaaa; }
+.footer-links li a { color: #aaaaaa; text-decoration: none; }
 
 .footer-bottom {
     text-align: center;
@@ -363,48 +345,68 @@ body {
     color: #666666;
 }
 
-/* --- Adaptations Mobiles & Tablettes --- */
-@media (max-width: 900px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
+/* --- Adaptations Mobiles --- */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-        text-align: center;
+        padding: 10px 15px;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo h2 {
+        font-size: 0.8rem !important;
+    }
+
+    .btn-download {
+        font-size: 0.7rem !important;
+        padding: 5px 8px !important;
+    }
+
+    /* Le menu glissant latéral */
     .nav-links {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 250px;
+        height: 100vh;
+        background-color: #ffffff;
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+        padding: 60px 20px 20px 20px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin-bottom: 20px;
+        width: 100%;
     }
 
     .nav-links a {
+        font-size: 1rem;
+        display: block;
+        width: 100%;
         margin: 0;
     }
 
-    .hero-section h1 {
-        font-size: 30px;
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-dark);
     }
 
-    .whatsapp-audit-btn {
-        font-size: 13px;
-        padding: 10px 16px;
-    }
-
-    .wa-container-left {
-        justify-content: center;
-    }
+    .hero-section h1 { font-size: 26px; }
+    .footer-container { grid-template-columns: 1fr; gap: 30px; }
+    .wa-container-left { justify-content: center; }
 }
-@media (max-width: 768px) {
-    /* Taille réduite du titre sur mobile */
-    .logo h2 {
-        font-size: 0.75rem !important;
-    }
-}
-
