@@ -660,4 +660,10 @@ footer {
         grid-template-columns: 1fr;
     }
     }
+@media (max-width: 768px) {
+    .logo h2 {
+        font-size: 0.75rem !important;
+    }
+        }
+    
     
