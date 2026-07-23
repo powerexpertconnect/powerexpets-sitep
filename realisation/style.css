@@ -64,11 +64,28 @@ body {
     color: var(--primary-color);
 }
 
+/* --- Contrôle strict du Logo --- */
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 32px !important;
+    width: auto !important;
+    max-width: none !important;
+    object-fit: contain;
+    display: block;
+}
+
 .logo h2 {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
     margin: 0;
+    white-space: nowrap;
 }
 
 .text-orange { color: var(--orange-color); }
@@ -355,13 +372,18 @@ body {
         display: block;
     }
 
+    /* Réduction propre du logo et texte pour smartphone */
+    .logo img {
+        height: 26px !important;
+    }
+
     .logo h2 {
-        font-size: 0.8rem !important;
+        font-size: 0.95rem !important;
     }
 
     .btn-download {
-        font-size: 0.7rem !important;
-        padding: 5px 8px !important;
+        font-size: 0.65rem !important;
+        padding: 6px 10px !important;
     }
 
     /* Le menu glissant latéral */
@@ -409,4 +431,5 @@ body {
     .hero-section h1 { font-size: 26px; }
     .footer-container { grid-template-columns: 1fr; gap: 30px; }
     .wa-container-left { justify-content: center; }
-}
+              }
+    
