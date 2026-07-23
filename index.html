@@ -33,6 +33,12 @@
     <header>
         <div class="container">
             <nav>
+                <!-- Bouton Menu Burger à gauche -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- Logo au centre -->
                 <div class="logo">
                     <img src="images/logo.png" alt="Logo">
                     <div>
@@ -40,15 +46,25 @@
                     </div>
                 </div>
 
-                <ul class="nav-links">
+                <!-- Liens du menu (Volet coulissant depuis la gauche) -->
+                <ul class="nav-links" id="nav-links">
+                    <li class="close-menu" id="close-menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </li>
                     <li><a href="#" class="active">Accueil</a></li>
                     <li><a href="realisation/index.html">Réalisations</a></li>
                 </ul>
-                <a href="https://play.google.com/store/apps/details?id=com.powerexperts.connect" target="_blank" onclick="fbq('track', 'Purchase',{value: 0.00, currency: 'XOF'});" rel="noopener noreferrer" class="btn-orange header-btn"><i class="fa-brands fa-google-play"></i> TÉLÉCHARGER</a>
-                <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+
+                <!-- Bouton Télécharger à droite -->
+                <a href="https://play.google.com/store/apps/details?id=com.powerexperts.connect" target="_blank" onclick="fbq('track', 'Purchase',{value: 0.00, currency: 'XOF'});" rel="noopener noreferrer" class="btn-orange header-btn">
+                    <i class="fa-brands fa-google-play"></i> TÉLÉCHARGER
+                </a>
             </nav>
         </div>
     </header>
+
+    <!-- Voile sombre d'arrière-plan quand le menu glisse -->
+    <div class="menu-overlay" id="menu-overlay"></div>
 
     <!-- --- HERO SECTION --- -->
     <section class="hero">
@@ -68,7 +84,7 @@
                 </a>
             </div>
 
-          <div class="hero-images">
+            <div class="hero-images">
                 <div class="image-stack-left">
                     <div class="img-wrapper h-img-1">
                         <img src="images/technicien-clim.png" alt="Climatisation">
@@ -232,6 +248,30 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Script JavaScript pour l'ouverture/fermeture du menu latéral -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const navLinks = document.getElementById('nav-links');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        if (mobileMenu && closeMenu && navLinks && menuOverlay) {
+            // Ouvrir le menu latéral
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.add('active');
+                menuOverlay.classList.add('active');
+            });
+
+            // Fermer le menu latéral
+            const hideMenu = () => {
+                navLinks.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            };
+
+            closeMenu.addEventListener('click', hideMenu);
+            menuOverlay.addEventListener('click', hideMenu);
+        }
+    </script>
 </body>
-</html>
+                        </html>
+                        
