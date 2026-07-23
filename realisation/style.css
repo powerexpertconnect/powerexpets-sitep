@@ -253,7 +253,45 @@ body {
     color: #aaaaaa;
 }
 
-/* --- Bouton WhatsApp Flottant Fixe --- */
+/* --- Bouton WhatsApp Texte (Haut à gauche) --- */
+.wa-container-left {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1280px;
+    margin: 20px auto 0 auto;
+    padding: 0 20px;
+}
+
+.whatsapp-audit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-audit-btn:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+}
+
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* --- Bouton WhatsApp Flottant (Bas à droite) --- */
 .float-whatsapp {
     position: fixed;
     width: 55px;
@@ -371,7 +409,24 @@ body {
         font-size: 0.65rem !important;
     }
 
-    /* 2. Adaptation du bouton flottant sur mobile */
+    /* 2. Adaptation des boutons WhatsApp */
+    .wa-container-left {
+        justify-content: flex-start !important;
+        padding: 0 12px !important;
+        margin-top: 15px !important;
+    }
+
+    .whatsapp-audit-btn {
+        padding: 6px 12px !important;
+        font-size: 11px !important;
+    }
+
+    .whatsapp-icon {
+        width: 14px !important;
+        height: 14px !important;
+        margin-right: 5px !important;
+    }
+
     .float-whatsapp {
         width: 48px;
         height: 48px;
@@ -454,4 +509,4 @@ body {
 
     .hero-section h1 { font-size: 22px; }
     }
-        
+    
